@@ -1,14 +1,11 @@
 {
-  "name": "@matharumanpreet00/react-daterange-picker",
-  "version": "1.0.5",
+  "name": "@monceeef/react-daterange-picker",
+  "version": "1.0.6",
   "description": "A react date range picker using Material Design",
-  "author": {
-    "email": "matharumanpreet00@gmail.com",
-    "name": "Manpreet Singh Matharu"
-  },
+  "author": "Moncif loukili <moncifloukili@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/matharumanpreet00/react-daterange-picker"
+    "url": "git+https://github.com/monceeef/react-daterange-picker.git"
   },
   "main": "build/index.js",
   "scripts": {
@@ -45,5 +42,12 @@
     "npm",
     "package"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/matharumanpreet00/react-daterange-picker/issues"
+  },
+  "homepage": "https://github.com/matharumanpreet00/react-daterange-picker#readme"
 }
