@@ -14,7 +14,15 @@ import { DateRange, NavigationAction, DefinedRange } from "./types";
 import Menu from "./components/Menu";
 import { defaultRanges } from "./defaults";
 import { parseOptionalDate } from "./utils";
+import {
+  StylesProvider,
+  createGenerateClassName
+} from "@material-ui/core/styles";
 
+const generateClassName = createGenerateClassName({
+  productionPrefix: "rangepicker",
+  disableGlobal: true
+});
 type Marker = symbol;
 
 export const MARKERS: { [key: string]: Marker } = {
@@ -156,19 +164,21 @@ const DateRangePickerImpl: React.FunctionComponent<DateRangePickerProps> = props
   };
 
   return open ? (
-    <Menu
-      dateRange={dateRange}
-      minDate={minDateValid}
-      maxDate={maxDateValid}
-      ranges={definedRanges}
-      firstMonth={firstMonth}
-      secondMonth={secondMonth}
-      setFirstMonth={setFirstMonthValidated}
-      setSecondMonth={setSecondMonthValidated}
-      setDateRange={setDateRangeValidated}
-      helpers={helpers}
-      handlers={handlers}
-    />
+    <StylesProvider generateClassName={generateClassName}>
+      <Menu
+        dateRange={dateRange}
+        minDate={minDateValid}
+        maxDate={maxDateValid}
+        ranges={definedRanges}
+        firstMonth={firstMonth}
+        secondMonth={secondMonth}
+        setFirstMonth={setFirstMonthValidated}
+        setSecondMonth={setSecondMonthValidated}
+        setDateRange={setDateRangeValidated}
+        helpers={helpers}
+        handlers={handlers}
+      />
+    </StylesProvider>
   ) : null;
 };
 
